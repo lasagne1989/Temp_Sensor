@@ -15,9 +15,11 @@ async def main():
         if temp > upper_limit and heater != "on":
             await on_off.turn_off(plugs)
             heater = "on"
+            print("Heater ON!")
         if temp < lower_limit and heater != "off":
             await on_off.turn_on(plugs)
             heater = "off"
+            print("Heater OFF!")
         await asyncio.sleep(600)
 
 
