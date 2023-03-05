@@ -8,6 +8,7 @@ upper_limit = 18.5
 lower_limit = 17.5
 
 async def main():
+    await asyncio.sleep(60)
     plugs, sensors = await connection()
     heater = "start"
     start_time = time()
