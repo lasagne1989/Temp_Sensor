@@ -4,12 +4,13 @@ from temp_check import temp_check
 from time import time
 import on_off
 
-upper_limit = 18
-lower_limit = 17
+upper_limit = 18.5
+lower_limit = 17.5
 
 async def main():
     plugs, sensors = await connection()
     heater = "start"
+    start_time = time()
     while True:
         temp = await temp_check(sensors)
         if temp < lower_limit and heater != "on":
